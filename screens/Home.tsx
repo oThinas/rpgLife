@@ -1,11 +1,24 @@
-import { SafeAreaView, Text } from 'react-native';
+/** Core */
+import { SafeAreaView, StyleSheet } from 'react-native';
+
+/** Components */
+import { TextComponent } from '../components';
 
 export function Home() {
   return (
-    <SafeAreaView className='flex-1 justify-center items-center bg-red-700'>
-      <Text className='text-black text-4xl'>
+    <SafeAreaView style={styles.container}>
+      <TextComponent>
         Home
-      </Text>
+      </TextComponent>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'red',
+  },
+});
