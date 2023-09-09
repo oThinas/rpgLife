@@ -1,3 +1,3 @@
 export interface IButtonProps {
-  children: string;
+  children: string | JSX.Element;
 }
