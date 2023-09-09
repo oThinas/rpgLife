@@ -11,7 +11,7 @@ export function MainNavigator() {
   const { Navigator, Screen } = createStackNavigator<MainNavigatorParamList>();
 
   return (
-    <Navigator>
+    <Navigator screenOptions={{ headerShown: false }}>
       <Screen name='Home' component={Home}/>
     </Navigator>
   );
