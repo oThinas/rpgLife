@@ -2,9 +2,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { avatarsReducer, missionsReducer } from '../reducers';
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    avatars: avatarsReducer,
+    avatar: avatarsReducer,
     missions: missionsReducer,
   },
 });

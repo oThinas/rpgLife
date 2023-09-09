@@ -8,12 +8,18 @@ import { MainNavigator } from './screens';
 /** Components */
 import { StatusBar } from 'react-native';
 
+/** Redux */
+import { Provider } from 'react-redux';
+import { store } from './store';
+
 export default function App() {
   return (
-    <NavigationContainer>
-      <MainNavigator />
+    <Provider store={store}>
+      <NavigationContainer>
+        <MainNavigator />
 
-      <StatusBar translucent barStyle='light-content' />
-    </NavigationContainer>
+        <StatusBar translucent barStyle='light-content' />
+      </NavigationContainer>
+    </Provider>
   );
 }

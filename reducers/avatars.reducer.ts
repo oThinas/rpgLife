@@ -5,7 +5,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IAvatar } from '../interfaces';
 
 const initialState: IAvatar = {
-  name: 'Edit name',
+  name: 'Edite o nome',
   level: 1,
   currentXP: 0,
   nextLevelXP: 100,
