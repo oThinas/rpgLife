@@ -2,7 +2,7 @@
 import { SafeAreaView, StyleSheet } from 'react-native';
 
 /** Components */
-import { TitleComponent } from '../components';
+import { ButtonComponent, TitleComponent } from '../components';
 import { colors } from '../core/colors';
 
 export function Home() {
@@ -11,6 +11,10 @@ export function Home() {
       <TitleComponent>
         Home
       </TitleComponent>
+
+      <ButtonComponent>
+        My missions
+      </ButtonComponent>
     </SafeAreaView>
   );
 }
