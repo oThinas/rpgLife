@@ -18,7 +18,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
   ],
-  globals: { module: 'writable' },
+  globals: { module: 'writable', JSX: 'writable' },
   settings: { react: { version: 'detect' } },
   rules: {
     // General
