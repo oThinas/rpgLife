@@ -11,7 +11,7 @@ export function IconButtonComponent(props: IIconButtonProps) {
   const IconComponent = Icon[props.iconName] as FunctionComponent<IconProps>;
 
   return (
-    <TouchableOpacity>
+    <TouchableOpacity activeOpacity={0.75}>
       <IconComponent />
     </TouchableOpacity>
   );
