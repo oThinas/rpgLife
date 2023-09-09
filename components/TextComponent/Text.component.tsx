@@ -1,5 +1,6 @@
 /** Core */
 import { StyleSheet, Text } from 'react-native';
+import { colors } from '../../core/colors';
 
 /** Interfaces */
 import { ITextProps } from './text.props';
@@ -18,6 +19,6 @@ const style = StyleSheet.create({
   base: {
     fontSize: 20,
     fontWeight: '500',
-    color: 'black',
+    color: colors.coolGrey[100],
   },
 });

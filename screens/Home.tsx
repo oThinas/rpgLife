@@ -2,14 +2,15 @@
 import { SafeAreaView, StyleSheet } from 'react-native';
 
 /** Components */
-import { TextComponent } from '../components';
+import { TitleComponent } from '../components';
+import { colors } from '../core/colors';
 
 export function Home() {
   return (
     <SafeAreaView style={styles.container}>
-      <TextComponent>
+      <TitleComponent>
         Home
-      </TextComponent>
+      </TitleComponent>
     </SafeAreaView>
   );
 }
@@ -19,6 +20,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'red',
+    backgroundColor: colors.coolGrey[800],
   },
 });
