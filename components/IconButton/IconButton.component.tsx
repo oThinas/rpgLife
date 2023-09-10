@@ -5,7 +5,7 @@ import * as Icon from 'phosphor-react-native';
 import { IIconButtonProps } from './iconButton.props';
 import { IconProps } from 'phosphor-react-native';
 import { FunctionComponent } from 'react';
-import { ButtonComponent } from '../ButtonComponent/Button.component';
+import { ButtonComponent } from '../Button/Button.component';
 
 export function IconButtonComponent(props: IIconButtonProps) {
   const IconComponent = Icon[props.iconName] as FunctionComponent<IconProps>;
