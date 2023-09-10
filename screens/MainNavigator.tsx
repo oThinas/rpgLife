@@ -11,7 +11,10 @@ export function MainNavigator() {
   const { Navigator, Screen } = createStackNavigator<MainNavigatorParamList>();
 
   return (
-    <Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
+    <Navigator
+      screenOptions={{ headerShown: false }}
+      initialRouteName='Home'
+    >
       <Screen name='Home' component={Home} />
       <Screen name='MissionsList' component={MissionsList} />
       <Screen name='AddMission' component={AddMission} />

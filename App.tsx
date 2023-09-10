@@ -17,7 +17,17 @@ import { colors } from './core/colors';
 export default function App() {
   return (
     <Provider store={store}>
-      <NavigationContainer>
+      <NavigationContainer theme={{
+        colors: {
+          background: colors.coolGrey[800],
+          primary: '',
+          card: '',
+          text: '',
+          border: '',
+          notification: '',
+        },
+        dark: false,
+      }}>
         <IconContext.Provider value={{
           color: colors.coolGrey[100],
           weight: 'fill',
