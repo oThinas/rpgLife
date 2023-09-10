@@ -12,7 +12,7 @@ import { useAppDispatch } from '../hooks/reduxHooks';
 import { setMissionsList } from '../reducers/missions.reducer';
 
 /** API */
-import { getMissions } from '../api/mission.api';
+import { missionApi } from '../api/mission.api';
 
 /** Interfaces */
 import { NavigationProps } from '../types';
@@ -24,7 +24,7 @@ export function MissionsList(props: NavigationProps<'MissionsList'>) {
   useEffect(() => {
     async function fetchMissions() {
       try {
-        const response = await getMissions();
+        const response = await missionApi.getMissions();
         const missions: IMission[] = response.map((mission) => ({
           id: Number(mission.id),
           name: mission.name,

@@ -26,17 +26,14 @@ export const missionsSlice = createSlice({
       }
     },
 
-    editMission(state, action: PayloadAction<IMission>) {
-      const index = getMissionIndex(state, action.payload.id);
-      if (index !== -1) {
-        state[index] = action.payload;
-      }
-    },
-
     setMissionsList(state, action: PayloadAction<IMission[]>) {
       state.length = 0;
 
       action.payload.forEach((mission) => {
+        if (mission.completed) {
+          return;
+        }
+
         state.push(mission);
       });
     },
@@ -47,7 +44,6 @@ export const {
   addMission,
   completeMission,
   deleteMission,
-  editMission,
   setMissionsList,
 } = missionsSlice.actions;
 

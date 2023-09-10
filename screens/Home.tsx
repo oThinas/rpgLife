@@ -9,13 +9,15 @@ import { AvatarComponent, BaseScreenComponent, ButtonComponent } from '../compon
 import { useAppDispatch } from '../hooks/reduxHooks';
 
 /** API */
-import { getAvatar } from '../api/avatar.api';
+import { avatarApi } from '../api/avatar.api';
 
 /** Redux */
 import { setAvatar } from '../reducers/avatars.reducer';
 
+/** Utils */
+import { avatarMapper } from '../utils/avatarMapper';
+
 /** Interfaces */
-import { IAvatar } from '../interfaces';
 import { MainNavigatorParamList, NavigationProps } from '../types';
 
 export function Home({ navigation }: NavigationProps<'Home'>) {
@@ -24,15 +26,8 @@ export function Home({ navigation }: NavigationProps<'Home'>) {
   useEffect(() => {
     async function fetchAvatar() {
       try {
-        const response = await getAvatar();
-        const { exp, level, name, needed } = response;
-
-        const avatar: IAvatar = {
-          name,
-          level,
-          currentXP: exp,
-          nextLevelXP: needed,
-        };
+        const response = await avatarApi.getAvatar();
+        const avatar = avatarMapper(response);
 
         dispatch(setAvatar(avatar));
       } catch (error) {

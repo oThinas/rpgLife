@@ -5,12 +5,36 @@ import { colors } from '../../core/colors';
 /** Components */
 import { IconButtonComponent, TextComponent } from '..';
 
+/** Hooks */
+import { useAppDispatch } from '../../hooks/reduxHooks';
+
+/** Reducers */
+import { completeMission } from '../../reducers/missions.reducer';
+import { setAvatar } from '../../reducers/avatars.reducer';
+
+/** API */
+import { missionApi } from '../../api/mission.api';
+
+/** Utils */
+import { avatarMapper } from '../../utils/avatarMapper';
+
 /** Interface */
 import { IMissionProps } from './mission.props';
+import { IAvatarResponse } from '../../interfaces';
 
 export function MissionComponent({ mission }: IMissionProps) {
-  function handleDone() {
-    console.log('handleDone', mission.id);
+  const dispatch = useAppDispatch();
+
+  async function handleDone() {
+    try {
+      const response = await missionApi.completeMission(mission.id);
+      dispatch(completeMission(mission.id));
+
+      const avatar = avatarMapper(response as IAvatarResponse);
+      dispatch(setAvatar(avatar));
+    } catch(error) {
+      console.log('error', error);
+    }
   }
 
   function handleDelete() {

@@ -3,8 +3,12 @@ export const endpoints = {
 
   mission: {
     getall: '/mission/getAll',
-    post: '/mission/create',
-    put: '/mission/:id/done',
-    delete: '/mission/:id/delete',
+    create: '/mission/create',
+    complete(id: number) {
+      return `/mission/${id}/done`;
+    },
+    delete(id: number) {
+      return `/mission/${id}/delete`;
+    },
   },
 };
