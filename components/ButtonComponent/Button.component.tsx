@@ -10,7 +10,7 @@ import { colors } from '../../core/colors';
 
 export function ButtonComponent(props: IButtonProps) {
   return (
-    <TouchableOpacity style={style.container} activeOpacity={0.75}>
+    <TouchableOpacity style={style.container} activeOpacity={0.75} {...props}>
       <TextComponent>
         {props.children}
       </TextComponent>
