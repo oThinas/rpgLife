@@ -1,3 +1,3 @@
 import axios from 'axios';
 
-export const api = axios.create({ baseURL: 'http://localhost:3001' });
+export const api = axios.create({ baseURL: 'http://192.168.15.9:3001' }); // VAZOU O IP

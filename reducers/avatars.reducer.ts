@@ -5,7 +5,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IAvatar } from '../interfaces';
 
 const initialState: IAvatar = {
-  name: 'Edite o nome',
+  name: 'Carregando...',
   level: 1,
   currentXP: 0,
   nextLevelXP: 100,
@@ -28,8 +28,15 @@ export const avatarSlice = createSlice({
         state.nextLevelXP = state.nextLevelXP * 2;
       }
     },
+
+    setAvatar(state, action: PayloadAction<IAvatar>) {
+      state.name = action.payload.name;
+      state.level = action.payload.level;
+      state.currentXP = action.payload.currentXP;
+      state.nextLevelXP = action.payload.nextLevelXP;
+    },
   },
 });
 
-export const { setName, addXP } = avatarSlice.actions;
+export const { setName, addXP, setAvatar } = avatarSlice.actions;
 export const avatarsReducer = avatarSlice.reducer;

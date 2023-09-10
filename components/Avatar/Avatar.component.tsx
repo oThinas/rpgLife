@@ -1,5 +1,5 @@
 /** Core */
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Keyboard, StyleSheet, TextInput, View } from 'react-native';
 import { Controller, useForm } from 'react-hook-form';
 import { Person } from 'phosphor-react-native';
@@ -18,6 +18,11 @@ export function AvatarComponent() {
 
   const avatar = useAppSelector((state) => state.avatar);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    setValue('avatarName', avatar.name);
+  }, [avatar]);
+
 
   const { control, handleSubmit, setValue } = useForm<{ avatarName: string }>({ defaultValues: { avatarName: avatar.name } });
 
