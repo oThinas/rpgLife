@@ -34,6 +34,8 @@ export const missionsSlice = createSlice({
     },
 
     setMissionsList(state, action: PayloadAction<IMission[]>) {
+      state.length = 0;
+
       action.payload.forEach((mission) => {
         state.push(mission);
       });
