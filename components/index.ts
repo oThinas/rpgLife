@@ -1,4 +1,5 @@
 export { BaseScreenComponent } from './BaseScreen/BaseScreen.component';
+export { BaseScreenHeaderComponent } from './BaseScreenHeader/BaseScreenHeader.component';
 export { ProgressBarComponent } from './ProgressBar/ProgressBar.component';
 export { AvatarComponent } from './Avatar/Avatar.component';
 export { ButtonComponent } from './Button/Button.component';
