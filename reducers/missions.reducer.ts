@@ -32,6 +32,12 @@ export const missionsSlice = createSlice({
         state[index] = action.payload;
       }
     },
+
+    setMissionsList(state, action: PayloadAction<IMission[]>) {
+      action.payload.forEach((mission) => {
+        state.push(mission);
+      });
+    },
   },
 });
 
@@ -40,6 +46,7 @@ export const {
   completeMission,
   deleteMission,
   editMission,
+  setMissionsList,
 } = missionsSlice.actions;
 
 export const missionsReducer = missionsSlice.reducer;
