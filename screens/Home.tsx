@@ -1,29 +1,74 @@
 /** Core */
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { useEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
 
 /** Components */
-import { ButtonComponent, TitleComponent } from '../components';
-import { colors } from '../core/colors';
+import { AvatarComponent, BaseScreenComponent, ButtonComponent } from '../components';
 
-export function Home() {
+/** Hooks */
+import { useAppDispatch } from '../hooks/reduxHooks';
+
+/** API */
+import { getAvatar } from '../api/avatar.api';
+
+/** Redux */
+import { setAvatar } from '../reducers/avatars.reducer';
+
+/** Interfaces */
+import { IAvatar } from '../interfaces';
+import { MainNavigatorParamList, NavigationProps } from '../types';
+
+export function Home({ navigation }: NavigationProps<'Home'>) {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    async function fetchAvatar() {
+      try {
+        const response = await getAvatar();
+        const { exp, level, name, needed } = response;
+
+        const avatar: IAvatar = {
+          name,
+          level,
+          currentXP: exp,
+          nextLevelXP: needed,
+        };
+
+        dispatch(setAvatar(avatar));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchAvatar();
+  }, [dispatch]);
+
+  function handleNavigation(screen: keyof MainNavigatorParamList) {
+    navigation.navigate(screen);
+  }
+
   return (
-    <SafeAreaView style={styles.container}>
-      <TitleComponent>
-        Home
-      </TitleComponent>
+    <BaseScreenComponent>
+      <AvatarComponent />
 
-      <ButtonComponent>
-        My missions
-      </ButtonComponent>
-    </SafeAreaView>
+      <View style={styles.buttons}>
+        <ButtonComponent onPress={() => handleNavigation('MissionsList')}>
+          Minhas missões
+        </ButtonComponent>
+
+        <ButtonComponent onPress={() => handleNavigation('AddMission')}>
+          Adicionar missão
+        </ButtonComponent>
+      </View>
+    </BaseScreenComponent>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
+  avatarName: {
+    flexDirection: 'row',
+    gap: 16,
     alignItems: 'center',
-    backgroundColor: colors.coolGrey[800],
   },
+  buttons: { gap: 32 },
 });
