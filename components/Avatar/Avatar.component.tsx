@@ -5,7 +5,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { Person } from 'phosphor-react-native';
 
 /** Components */
-import { IconButtonComponent, ProgressBarComponent } from '..';
+import { IconButtonComponent, ProgressBarComponent, TextComponent } from '..';
 
 /** Hooks */
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
@@ -40,6 +40,10 @@ export function AvatarComponent() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+        <TextComponent additionalStyles={styles.disclamer}>
+          Nota: o nome será salvo apenas na execução atual do app. Infelizmente, a API não tem um endpoint para isso :(
+        </TextComponent>
+
         <View style={styles.avatarNameContainer}>
           <Controller
             control={control}
@@ -75,6 +79,7 @@ const styles = StyleSheet.create({
     gap: 32,
   },
   header: { alignItems: 'center' },
+  disclamer: { fontSize: 12 },
   avatarNameContainer: {
     flexDirection: 'row',
     gap: 16,
