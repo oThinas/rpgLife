@@ -4,8 +4,8 @@ import { FlatList, StyleSheet, View } from 'react-native';
 /** Hooks */
 import { useAppSelector } from '../../hooks/reduxHooks';
 
-/** Interfaces */
-import { MissionComponent } from '../Mission/Mission.component';
+/** Components */
+import { MissionComponent } from '..';
 
 export function ListComponent() {
   const missions = useAppSelector((state) => state.missions);
