@@ -70,7 +70,7 @@ export function AvatarComponent() {
         <ProgressBarComponent currentXP={avatar.currentXP} level={avatar.level} nextLevelXP={avatar.nextLevelXP} />
       </View>
 
-      <Person size={128} />
+      <Person size={256} />
     </View>
   );
 }
