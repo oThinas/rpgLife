@@ -1,5 +1,6 @@
-export { ButtonComponent } from './ButtonComponent/Button.component';
-export { IconButtonComponent } from './IconButtonComponent/IconButton.component';
-export { TextComponent } from './TextComponent/Text.component';
-export { TitleComponent } from './TitleComponent/Title.component';
-
+export { ProgressBarComponent } from './ProgressBar/ProgressBar.component';
+export { AvatarComponent } from './Avatar/Avatar.component';
+export { ButtonComponent } from './Button/Button.component';
+export { IconButtonComponent } from './IconButton/IconButton.component';
+export { TextComponent } from './Text/Text.component';
+export { TitleComponent } from './Title/Title.component';
