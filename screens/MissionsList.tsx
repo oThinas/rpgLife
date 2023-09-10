@@ -1,5 +1,5 @@
 /** Components */
-import { BaseScreenHeaderComponent, MissionComponent } from '../components';
+import { BaseScreenHeaderComponent, ListComponent } from '../components';
 
 /** Types */
 import { NavigationProps } from '../types';
@@ -7,7 +7,7 @@ import { NavigationProps } from '../types';
 export function MissionsList(props: NavigationProps<'MissionsList'>) {
   return (
     <BaseScreenHeaderComponent navigationProps={props}>
-      <MissionComponent />
+      <ListComponent />
     </BaseScreenHeaderComponent>
   );
 }

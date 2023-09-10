@@ -5,19 +5,22 @@ import { colors } from '../../core/colors';
 /** Components */
 import { IconButtonComponent, TextComponent } from '..';
 
-export function MissionComponent() {
+/** Interface */
+import { IMissionProps } from './mission.props';
+
+export function MissionComponent({ mission }: IMissionProps) {
   function handleDone() {
-    console.log('handleDone');
+    console.log('handleDone', mission.id);
   }
 
   function handleDelete() {
-    console.log('handleDelete');
+    console.log('handleDelete', mission.id);
   }
 
   return (
     <View style={styles.container}>
       <TextComponent>
-        MissionComponent
+        {mission.name}
       </TextComponent>
 
       <View style={styles.actions}>
