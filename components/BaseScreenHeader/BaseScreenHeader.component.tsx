@@ -13,7 +13,7 @@ export function BaseScreenHeaderComponent(props: IBaseScreenHeaderProps) {
     <View style={styles.container}>
       <HeaderComponent title={props.navigationProps.route.name} navigation={props.navigationProps.navigation} />
 
-      <SafeAreaView style={styles.main}>
+      <SafeAreaView style={[styles.main, props.style]}>
         {props.children}
       </SafeAreaView>
     </View>
