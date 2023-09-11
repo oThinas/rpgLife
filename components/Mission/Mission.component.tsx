@@ -9,7 +9,7 @@ import { IconButtonComponent, TextComponent } from '..';
 import { useAppDispatch } from '../../hooks/reduxHooks';
 
 /** Reducers */
-import { completeMission } from '../../reducers/missions.reducer';
+import { completeMission, deleteMission } from '../../reducers/missions.reducer';
 import { setAvatar } from '../../reducers/avatars.reducer';
 
 /** API */
@@ -37,8 +37,13 @@ export function MissionComponent({ mission }: IMissionProps) {
     }
   }
 
-  function handleDelete() {
-    console.log('handleDelete', mission.id);
+  async function handleDelete() {
+    try {
+      await missionApi.deleteMission(mission.id);
+      dispatch(deleteMission(mission.id));
+    } catch(error) {
+      console.log('error', error);
+    }
   }
 
   return (

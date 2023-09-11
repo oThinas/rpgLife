@@ -10,7 +10,7 @@ interface IGetMissionsResponse {
   period: 'daily' | 'weekly',
   exp: number,
   id: string,
-  status: 'toBeDone' | 'Done',
+  status: 'toBeDone' | 'Done' | 'deleted',
 }
 
 async function getMissions(): Promise<IGetMissionsResponse[]> {
@@ -21,7 +21,12 @@ async function completeMission(id: number): Promise<IAvatarResponse | string> {
   return (await api.post(endpoints.mission.complete(id))).data;
 }
 
+async function deleteMission(id: number): Promise<string> {
+  return (await api.post(endpoints.mission.delete(id))).data;
+}
+
 export const missionApi = {
   getMissions,
   completeMission,
+  deleteMission,
 };
