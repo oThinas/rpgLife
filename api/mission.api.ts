@@ -3,7 +3,7 @@ import { endpoints } from '../core/endpoints';
 import { api } from '../lib/axios';
 
 /** Interfaces */
-import { IAvatarResponse } from '../interfaces';
+import { IAvatarResponse, IMissionRequest } from '../interfaces';
 
 interface IGetMissionsResponse {
   name: string,
@@ -25,8 +25,13 @@ async function deleteMission(id: number): Promise<string> {
   return (await api.post(endpoints.mission.delete(id))).data;
 }
 
+async function createMission(mission: IMissionRequest): Promise<IMissionRequest | string> {
+  return (await api.post(endpoints.mission.create, mission)).data;
+}
+
 export const missionApi = {
   getMissions,
   completeMission,
   deleteMission,
+  createMission,
 };
