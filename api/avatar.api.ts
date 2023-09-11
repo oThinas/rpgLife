@@ -1,5 +1,7 @@
+/** Core */
+import { endpoints } from '../core';
+
 /** API */
-import { endpoints } from '../core/endpoints';
 import { api } from '../lib/axios';
 
 /** Interfaces */

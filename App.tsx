@@ -12,7 +12,7 @@ import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { IconContext } from 'phosphor-react-native';
-import { colors } from './core/colors';
+import { colors } from './core';
 
 export default function App() {
   return (

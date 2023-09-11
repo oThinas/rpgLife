@@ -2,7 +2,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 /** Utils */
-import { getMissionIndex } from '../utils/getMissionIndex';
+import { getMissionIndex } from '../utils';
 
 /** Interfaces */
 import { IMission } from '../interfaces';

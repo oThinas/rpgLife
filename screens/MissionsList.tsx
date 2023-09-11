@@ -12,7 +12,7 @@ import { useAppDispatch } from '../hooks/reduxHooks';
 import { setMissionsList } from '../reducers/missions.reducer';
 
 /** API */
-import { missionApi } from '../api/mission.api';
+import { missionApi } from '../api';
 
 /** Interfaces */
 import { NavigationProps } from '../types';

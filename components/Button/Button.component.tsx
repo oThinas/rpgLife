@@ -6,7 +6,7 @@ import { TextComponent } from '..';
 
 /** Interfaces */
 import { IButtonProps } from './button.props';
-import { colors } from '../../core/colors';
+import { colors } from '../../core';
 
 export function ButtonComponent(props: IButtonProps) {
   return (

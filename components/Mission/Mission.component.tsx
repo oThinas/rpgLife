@@ -1,6 +1,6 @@
 /** Core */
 import { StyleSheet, View } from 'react-native';
-import { colors } from '../../core/colors';
+import { colors } from '../../core';
 
 /** Components */
 import { IconButtonComponent, TextComponent } from '..';
@@ -13,10 +13,10 @@ import { completeMission, deleteMission } from '../../reducers/missions.reducer'
 import { setAvatar } from '../../reducers/avatars.reducer';
 
 /** API */
-import { missionApi } from '../../api/mission.api';
+import { missionApi } from '../../api';
 
 /** Utils */
-import { avatarMapper } from '../../utils/avatarMapper';
+import { avatarMapper } from '../../utils';
 
 /** Interface */
 import { IMissionProps } from './mission.props';

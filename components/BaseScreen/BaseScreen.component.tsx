@@ -1,6 +1,6 @@
 /** Core */
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { colors } from '../../core/colors';
+import { colors } from '../../core';
 
 /** Interfaces */
 import { IBaseScreenProps } from './baseScreen.props';

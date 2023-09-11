@@ -1,6 +1,6 @@
 /** Core */
 import { StyleSheet, View } from 'react-native';
-import { colors } from '../../core/colors';
+import { colors } from '../../core';
 
 /** Components */
 import { IconButtonComponent, TitleComponent } from '..';

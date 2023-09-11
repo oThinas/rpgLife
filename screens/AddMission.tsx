@@ -3,18 +3,20 @@ import { useState } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { Controller, useForm } from 'react-hook-form';
 import { RadioButtonProps, RadioGroup } from 'react-native-radio-buttons-group';
-import { colors } from '../core/colors';
+import { colors } from '../core';
 
 /** Components */
 import { BaseScreenHeaderComponent, ButtonComponent, TextComponent } from '../components';
 
 /** Utils */
-import { missionTypeMapper } from '../utils/missionTypeMapper';
+import { missionTypeMapper } from '../utils';
+
+/** API */
+import { missionApi } from '../api/mission.api';
 
 /** Interfaces */
 import { NavigationProps } from '../types';
 import { IMissionRequest } from '../interfaces';
-import { missionApi } from '../api/mission.api';
 
 export function AddMission(props: NavigationProps<'AddMission'>) {
   const { control, handleSubmit } = useForm<{

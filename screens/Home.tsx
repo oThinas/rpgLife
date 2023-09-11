@@ -9,13 +9,13 @@ import { AvatarComponent, BaseScreenComponent, ButtonComponent } from '../compon
 import { useAppDispatch } from '../hooks/reduxHooks';
 
 /** API */
-import { avatarApi } from '../api/avatar.api';
+import { avatarApi } from '../api';
 
 /** Redux */
 import { setAvatar } from '../reducers/avatars.reducer';
 
 /** Utils */
-import { avatarMapper } from '../utils/avatarMapper';
+import { avatarMapper } from '../utils';
 
 /** Interfaces */
 import { MainNavigatorParamList, NavigationProps } from '../types';

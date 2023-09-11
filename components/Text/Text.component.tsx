@@ -1,6 +1,6 @@
 /** Core */
 import { StyleSheet, Text } from 'react-native';
-import { colors } from '../../core/colors';
+import { colors } from '../../core';
 
 /** Interfaces */
 import { ITextProps } from './text.props';

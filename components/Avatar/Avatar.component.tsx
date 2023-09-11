@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { Keyboard, StyleSheet, TextInput, View } from 'react-native';
 import { Controller, useForm } from 'react-hook-form';
 import { Person } from 'phosphor-react-native';
-import { colors } from '../../core/colors';
+import { colors } from '../../core';
 
 /** Components */
 import { IconButtonComponent, ProgressBarComponent, TextComponent } from '..';
