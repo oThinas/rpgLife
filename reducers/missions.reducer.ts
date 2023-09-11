@@ -1,6 +1,11 @@
+/** Core */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IMission } from '../interfaces';
+
+/** Utils */
 import { getMissionIndex } from '../utils/getMissionIndex';
+
+/** Interfaces */
+import { IMission } from '../interfaces';
 
 const initialState: IMission[] = [];
 
@@ -13,10 +18,20 @@ export const missionsSlice = createSlice({
     },
 
     completeMission(state, action: PayloadAction<number>) {
-      const index = getMissionIndex(state, action.payload);
+      const newList = [...state];
+      const index = getMissionIndex(newList, action.payload);
       if (index !== -1) {
-        state[index].completed = true;
+        newList[index].completed = true;
       }
+
+      state.length = 0;
+      newList.forEach((mission) => {
+        if (mission.completed) {
+          return;
+        }
+
+        state.push(mission);
+      });
     },
 
     deleteMission(state, action: PayloadAction<number>) {

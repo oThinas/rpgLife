@@ -26,9 +26,7 @@ export function ListComponent() {
           style={styles.container}
           data={missions}
           keyExtractor={(item) => String(item.id)}
-          renderItem={({ item }) => (
-            <MissionComponent mission={item} key={item.id} />
-          )}
+          renderItem={({ item }) => <MissionComponent mission={item} />}
           ItemSeparatorComponent={() => <View style={styles.divider} />}
         />
       )}
