@@ -1,6 +1,6 @@
 /** Core */
 import { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 /** Components */
 import { AvatarComponent, BaseScreenComponent, ButtonComponent } from '../components';
@@ -43,27 +43,42 @@ export function Home({ navigation }: NavigationProps<'Home'>) {
   }
 
   return (
-    <BaseScreenComponent>
-      <AvatarComponent />
+    <ScrollView
+      contentContainerStyle={styles.scrollViewContainer}
+      keyboardShouldPersistTaps="handled"
+    >
+      <BaseScreenComponent style={styles.container}>
+        <AvatarComponent />
 
-      <View style={styles.buttons}>
-        <ButtonComponent onPress={() => handleNavigation('MissionsList')}>
-          Minhas missões
-        </ButtonComponent>
+        <View style={styles.buttons}>
+          <ButtonComponent onPress={() => handleNavigation('MissionsList')}>
+            Minhas missões
+          </ButtonComponent>
 
-        <ButtonComponent onPress={() => handleNavigation('AddMission')}>
-          Adicionar missão
-        </ButtonComponent>
-      </View>
-    </BaseScreenComponent>
+          <ButtonComponent onPress={() => handleNavigation('AddMission')}>
+            Adicionar missão
+          </ButtonComponent>
+        </View>
+      </BaseScreenComponent>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 64,
+    gap: 80,
+  },
   avatarName: {
     flexDirection: 'row',
     gap: 16,
     alignItems: 'center',
   },
   buttons: { gap: 32 },
+  scrollViewContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+  },
 });
